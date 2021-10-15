@@ -1,6 +1,6 @@
 import type { AWS } from '@serverless/typescript'
 
-import hello from '@functions/hello'
+import writeImage from '@functions/writeImage'
 
 const serverlessConfiguration: AWS = {
   service: 'image-service-serverless',
@@ -16,22 +16,23 @@ const serverlessConfiguration: AWS = {
       platform: 'node',
     },
   },
-  plugins: ['serverless-esbuild'],
+  plugins: ['serverless-esbuild', 'serverless-offline'],
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
     apiGateway: {
+      binaryMediaTypes: ['*/*'],
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
+      apiKeys: ['dev-myFirstKey'],
     },
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
-      NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
+      NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=100',
     },
     lambdaHashingVersion: '20201221',
   },
-  // import the function via paths
-  functions: { hello },
+  functions: { writeImage },
 }
 
-export default serverlessConfiguration
+module.exports = serverlessConfiguration

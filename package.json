@@ -15,19 +15,15 @@
   },
   "dependencies": {
     "@middy/core": "^1.5.2",
+    "@middy/http-header-normalizer": "^2.5.2",
     "@middy/http-json-body-parser": "^1.5.2",
+    "@middy/http-multipart-body-parser": "^2.5.2",
     "aws-sdk": "^2.1006.0"
   },
   "devDependencies": {
     "@serverless/typescript": "^2.23.0",
     "@types/aws-lambda": "^8.10.71",
     "@types/node": "^14.14.25",
-    "json-schema-to-ts": "^1.5.0",
-    "serverless": "^2.23.0",
-    "serverless-esbuild": "^1.17.1",
-    "ts-node": "^9.1.1",
-    "tsconfig-paths": "^3.9.0",
-    "typescript": "^4.4.4",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^7.32.0",
@@ -36,8 +32,15 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "husky": "^7.0.0",
+    "json-schema-to-ts": "^1.5.0",
     "lint-staged": "^11.2.3",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "serverless": "^2.23.0",
+    "serverless-esbuild": "^1.17.1",
+    "serverless-offline": "^8.2.0",
+    "ts-node": "^9.1.1",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.4.4"
   },
   "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
   "license": "MIT",
