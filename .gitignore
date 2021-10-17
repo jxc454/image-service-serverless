@@ -20,3 +20,5 @@ config/local.yaml
 dist/
 
 .esbuild/
+
+docker/

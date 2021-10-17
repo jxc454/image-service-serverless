@@ -4,8 +4,8 @@ import config from 'config'
 import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/apiGateway'
 import { formatJSONResponse } from '@libs/apiGateway'
 import { middyfy } from '@libs/lambda'
-import * as dynamoose from 'dynamoose'
-import S3 from 'aws-sdk/clients/s3'
+import { aws as dynamooseAws, model } from 'dynamoose'
+import S3, { ClientConfiguration } from 'aws-sdk/clients/s3'
 
 import getImageSchema from '../../database/images'
 import schema from './schema'
@@ -13,25 +13,37 @@ import schema from './schema'
 const AWS_REGION: string = config.get('aws.region')
 const IMAGE_TABLE_NAME: string = config.get('db.imageTableName')
 const BUCKET: string = config.get('images.bucket')
+const S3_TEST_ENDPOINT = 'http://127.0.0.1:9000'
 
 const writeImageMetadata: ValidatedEventAPIGatewayProxyEvent<typeof schema> =
   async (event) => {
-    if (process.env.NODE_ENV !== 'production') {
-      console.log('USING LOCAL DYNAMO DB')
-      dynamoose.aws.ddb.local()
+    const s3Options: ClientConfiguration = {
+      region: AWS_REGION,
+    }
+
+    if (process.env.STAGE !== 'production') {
+      console.log(`STAGE is ${process.env.STAGE}, USING LOCAL S3 AND DYNAMO DB`)
+
+      // use local dynamoDB
+      dynamooseAws.ddb.local()
+
+      // use local minio instead of S3
+      s3Options.endpoint = S3_TEST_ENDPOINT
+      s3Options.s3ForcePathStyle = true
+      s3Options.accessKeyId = config.get('aws.accessKeyId')
+      s3Options.secretAccessKey = config.get('aws.secretAccessKey')
     }
 
     const {
       body: { location, mph, timestamp, image },
     } = event
 
-    let s3Url = 'https://fakeurl.url'
+    let s3Url = ''
     // write to S3 first
     if (image) {
       try {
-        const s3 = new S3({
-          region: AWS_REGION,
-        })
+        console.dir(s3Options)
+        const s3 = new S3(s3Options)
         const { filename, content, mimetype } = image
 
         const params = {
@@ -46,7 +58,7 @@ const writeImageMetadata: ValidatedEventAPIGatewayProxyEvent<typeof schema> =
             params,
             function (error: Error, data: ManagedUpload.SendData) {
               if (error) {
-                // console.error('S3 upload error', error)
+                console.error('S3 upload error', error)
                 reject(error)
                 return
               }
@@ -62,7 +74,7 @@ const writeImageMetadata: ValidatedEventAPIGatewayProxyEvent<typeof schema> =
       }
     }
 
-    const Image = dynamoose.model(IMAGE_TABLE_NAME, getImageSchema(), {})
+    const Image = model(IMAGE_TABLE_NAME, getImageSchema(), {})
 
     const result = await Image.create({
       location,

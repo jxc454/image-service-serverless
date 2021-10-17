@@ -14,8 +14,8 @@ const serverlessConfiguration: AWS = {
     tableName: '${self:custom.stage}-images',
     esbuild: {
       bundle: true,
-      minify: false,
-      sourcemap: true,
+      minify: true,
+      sourcemap: false,
       exclude: ['aws-sdk'],
       target: 'node14',
       define: { 'require.resolve': undefined },
