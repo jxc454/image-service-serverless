@@ -7,7 +7,7 @@ import { middyfy } from '@libs/lambda'
 import * as dynamoose from 'dynamoose'
 import S3 from 'aws-sdk/clients/s3'
 
-import ImageSchema from '../../database/images'
+import getImageSchema from '../../database/images'
 import schema from './schema'
 
 const AWS_REGION: string = config.get('aws.region')
@@ -62,7 +62,7 @@ const writeImageMetadata: ValidatedEventAPIGatewayProxyEvent<typeof schema> =
       }
     }
 
-    const Image = dynamoose.model(IMAGE_TABLE_NAME, ImageSchema)
+    const Image = dynamoose.model(IMAGE_TABLE_NAME, getImageSchema(), {})
 
     const result = await Image.create({
       location,
@@ -73,7 +73,7 @@ const writeImageMetadata: ValidatedEventAPIGatewayProxyEvent<typeof schema> =
     })
 
     return formatJSONResponse({
-      message: 'uploaded image',
+      message: 'uploaded image and image metadata',
       data: result,
     })
   }
