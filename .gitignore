@@ -18,3 +18,5 @@ node_modules/
 config/local.yaml
 
 dist/
+
+.esbuild/

@@ -11,8 +11,15 @@ plugins:
   - "@typescript-eslint"
 rules:
   eqeqeq: off
+  comma-dangle: off
   curly: error
   quotes:
     - error
     - single
 #  no-console: error -- disabled until logger is implemented
+overrides:
+  - files:
+      - "*serverless.ts"
+      - "*resources/**/*.ts"
+    rules:
+      no-template-curly-in-string: 'off'

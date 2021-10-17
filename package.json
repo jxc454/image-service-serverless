@@ -4,7 +4,7 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "start": "nodemon src/index.ts",
+    "start": "sls offline --no-auth",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "./node_modules/.bin/prettier --write '**/*.ts'",
     "lint": "eslint --fix --max-warnings=-1 '**/*.ts'",
@@ -18,7 +18,8 @@
     "@middy/http-header-normalizer": "^2.5.2",
     "@middy/http-json-body-parser": "^1.5.2",
     "@middy/http-multipart-body-parser": "^2.5.2",
-    "aws-sdk": "^2.1006.0"
+    "aws-sdk": "^2.1006.0",
+    "config": "^3.3.6"
   },
   "devDependencies": {
     "@serverless/typescript": "^2.23.0",
@@ -45,9 +46,9 @@
   "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
   "license": "MIT",
   "lint-staged": {
-    "*.ts": [
-      "npm run lint",
-      "npm run format"
+    "./**/*.ts": [
+      "eslint --fix --max-warnings=-1",
+      "./node_modules/.bin/prettier --write"
     ]
   }
 }
