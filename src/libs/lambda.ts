@@ -2,8 +2,9 @@ import middy from '@middy/core'
 import middyJsonBodyParser from '@middy/http-json-body-parser'
 import httpMultipartBodyParser from '@middy/http-multipart-body-parser'
 import httpHeaderNormalizer from '@middy/http-header-normalizer'
+import { ValidatedEventAPIGatewayProxyEvent } from '@libs/apiGateway'
 
-export const middyfy = (handler) => {
+export const middyfy = <T>(handler: ValidatedEventAPIGatewayProxyEvent<T>) => {
   return middy(handler)
     .use(
       httpHeaderNormalizer({

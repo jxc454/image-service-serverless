@@ -5,3 +5,5 @@ aws:
   secretAccessKey: !!null
 db:
   imageTableName: !!null
+images:
+  bucket: !!null
