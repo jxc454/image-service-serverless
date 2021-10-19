@@ -25,8 +25,15 @@ const serverlessConfiguration: AWS = {
       define: { 'require.resolve': undefined },
       platform: 'node',
     },
+    dynamodb: {
+      stages: ['local', 'dev'],
+    },
   },
-  plugins: ['serverless-esbuild', 'serverless-offline'],
+  plugins: [
+    'serverless-dynamodb-local',
+    'serverless-offline',
+    'serverless-esbuild',
+  ],
   provider: {
     stage: '${self:provider.environment.STAGE}',
     name: 'aws',

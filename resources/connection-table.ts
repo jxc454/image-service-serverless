@@ -3,32 +3,35 @@ export default {
     imageMeta: {
       Type: 'AWS::DynamoDB::Table',
       Properties: {
-        tableName: '${self:custom.stage}-connections',
-        attributeDefinitions: [
+        TableName: '${self:custom.stage}-connections',
+        AttributeDefinitions: [
           {
-            attributeName: 'location',
-            attributeType: 'S',
+            AttributeName: 'location',
+            AttributeType: 'S',
           },
           {
-            attributeName: 'connectionId',
-            attributeType: 'S',
+            AttributeName: 'connectionId',
+            AttributeType: 'S',
           },
           {
-            attributeName: 'created',
-            attributeType: 'N',
+            AttributeName: 'created',
+            AttributeType: 'N',
           },
         ],
-        keySchema: [{ attributeName: 'connectionId', keyType: 'HASH' }],
-        globalSecondaryIndexes: [
+        KeySchema: [{ AttributeName: 'connectionId', KeyType: 'HASH' }],
+        GlobalSecondaryIndexes: [
           {
-            indexName: 'location-connectionId',
-            keySchema: [
-              { attributeName: 'location', keyType: 'HASH' },
-              { attributeName: 'connectionId', keyType: 'RANGE' },
+            IndexName: 'location-connectionId',
+            KeySchema: [
+              { AttributeName: 'location', KeyType: 'HASH' },
+              { AttributeName: 'connectionId', KeyType: 'RANGE' },
             ],
+            Projection: {
+              ProjectionType: 'ALL',
+            },
           },
         ],
-        billingMode: 'PAY_PER_REQUEST',
+        BillingMode: 'PAY_PER_REQUEST',
       },
     },
   },

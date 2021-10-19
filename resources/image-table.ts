@@ -3,34 +3,37 @@ export default {
     imageMeta: {
       Type: 'AWS::DynamoDB::Table',
       Properties: {
-        tableName: '${self:custom.stage}-images',
-        attributeDefinitions: [
+        TableName: '${self:custom.stage}-images',
+        AttributeDefinitions: [
           {
-            attributeName: 'location',
-            attributeType: 'S',
+            AttributeName: 'location',
+            AttributeType: 'S',
           },
           {
-            attributeName: 'timestamp',
-            attributeType: 'N',
+            AttributeName: 'timestamp',
+            AttributeType: 'N',
           },
           {
-            attributeName: 'mph',
-            attributeType: 'N',
+            AttributeName: 'mph',
+            AttributeType: 'N',
           },
           {
-            attributeName: 'created',
-            attributeType: 'N',
+            AttributeName: 'created',
+            AttributeType: 'N',
           },
           {
-            attributeName: 'url',
-            attributeType: 'S',
+            AttributeName: 'url',
+            AttributeType: 'S',
           },
         ],
-        keySchema: [
-          { attributeName: 'location', keyType: 'HASH' },
-          { attributeName: 'timestamp', keyType: 'RANGE' },
+        KeySchema: [
+          { AttributeName: 'location', KeyType: 'HASH' },
+          { AttributeName: 'timestamp', KeyType: 'RANGE' },
         ],
-        billingMode: 'PAY_PER_REQUEST',
+        BillingMode: 'PAY_PER_REQUEST',
+        StreamSpecification: {
+          StreamViewType: 'KEYS_ONLY',
+        },
       },
     },
   },

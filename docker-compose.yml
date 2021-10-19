@@ -1,17 +1,23 @@
 version: '3.8'
+
+volumes:
+  minio-data: {}
+
 services:
-  dynamodb-local:
-    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"
-    image: "amazon/dynamodb-local:latest"
-    ports:
-      - "8000:8000"
-    volumes:
-      - "./docker/dynamodb:/home/dynamodblocal/data"
+  #  dynamodb-local:
+  #    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"
+  #    image: "amazon/dynamodb-local:latest"
+  #    ports:
+  #      - "8000:8000"
+  #    volumes:
+  #      - "./docker/dynamodb:/home/dynamodblocal/data"
 
   # IMPORTANT: set up keys for minio at localhost:9001, and add those keys to local.yaml
   minio-local:
-    command: "server /data --console-address \":9001\""
-    image: "minio/minio"
+    command: 'server /data --console-address ":9001"'
+    image: 'minio/minio'
+    volumes:
+      - minio-data:/data
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - '9000:9000'
+      - '9001:9001'
