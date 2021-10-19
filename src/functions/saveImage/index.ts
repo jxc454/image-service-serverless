@@ -1,7 +1,7 @@
 import { handlerPath } from '@libs/handlerResolver'
 
 export default {
-  handler: `${handlerPath(__dirname)}/handler.main`,
+  handler: `${handlerPath(__dirname)}/handler.saveImage`,
   events: [
     {
       http: {
@@ -9,7 +9,7 @@ export default {
         // authorizer can also be another lambda
         authorizer: 'aws_iam',
         // this might help with swagger gen
-        operationId: 'writeImage',
+        operationId: 'saveImage',
         path: 'image',
         private: true,
       },

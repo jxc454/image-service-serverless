@@ -4,3 +4,4 @@ aws:
   accessKeyId: AWS_ACCESS_KEY_ID
   secretAccessKey: AWS_SECRET_ACCESS_KEY
   imageTableName: IMAGE_TABLE_NAME
+  connectionTableName: CONNECTION_TABLE_NAME

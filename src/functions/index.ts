@@ -1,1 +1,2 @@
-export { default as writeImage } from './writeImage'
+export { default as saveImage } from './saveImage'
+export { default as wsConnect } from './webSocketConnect'
