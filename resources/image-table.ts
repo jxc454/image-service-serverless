@@ -19,7 +19,7 @@ export default {
       ],
       BillingMode: 'PAY_PER_REQUEST',
       StreamSpecification: {
-        StreamViewType: 'KEYS_ONLY',
+        StreamViewType: 'NEW_IMAGE',
       },
     },
   },

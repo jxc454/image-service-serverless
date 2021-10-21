@@ -43,7 +43,6 @@ const saveImage: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   // write to S3 first
   if (image) {
     try {
-      console.dir(s3Options)
       const s3 = new S3(s3Options)
       const { filename, content, mimetype } = image
 

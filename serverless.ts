@@ -2,6 +2,7 @@ import type { AWS } from '@serverless/typescript'
 
 import saveImage from '@functions/saveImage'
 import wsConnect from '@functions/webSocketConnect'
+import pushImage from '@functions/pushImage'
 
 import imageTable from 'resources/image-table'
 import connectionTable from 'resources/connection-table'
@@ -10,8 +11,10 @@ const serverlessConfiguration: AWS = {
   service: 'image-service-serverless',
   frameworkVersion: '2',
   resources: {
-    ...imageTable,
-    ...connectionTable,
+    Resources: {
+      ...imageTable,
+      ...connectionTable,
+    },
   },
   custom: {
     stage: '${self:provider.environment.STAGE}',
@@ -27,10 +30,23 @@ const serverlessConfiguration: AWS = {
     },
     dynamodb: {
       stages: ['local', 'dev'],
+      start: {
+        migrate: true,
+      },
+    },
+    'serverless-offline-dynamodb-streams': {
+      apiVersion: '2013-12-02',
+      endpoint: 'http://0.0.0.0:8000',
+      region: 'local',
+      accessKeyId: 'root',
+      secretAccessKey: 'root',
+      skipCacheInvalidation: false,
+      readInterval: 500,
     },
   },
   plugins: [
     'serverless-dynamodb-local',
+    'serverless-offline-dynamodb-streams',
     'serverless-offline',
     'serverless-esbuild',
   ],
@@ -56,7 +72,7 @@ const serverlessConfiguration: AWS = {
     },
     lambdaHashingVersion: '20201221',
   },
-  functions: { saveImage, wsConnect },
+  functions: { saveImage, wsConnect, pushImage },
 }
 
 module.exports = serverlessConfiguration
