@@ -23,7 +23,9 @@ const saveImage: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   }
 
   if (process.env.STAGE !== 'production') {
-    console.log(`STAGE is ${process.env.STAGE}, USING LOCAL S3 AND DYNAMO DB`)
+    console.log(
+      `SAVE IMAGE, STAGE is ${process.env.STAGE}, USING LOCAL S3 AND DYNAMO DB`
+    )
 
     // use local dynamoDB
     dynamooseAws.ddb.local()
@@ -39,40 +41,37 @@ const saveImage: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
     body: { location, mph, timestamp, image },
   } = event
 
-  let s3Url = ''
+  let s3ImageUrl = ''
   // write to S3 first
-  if (image) {
-    try {
-      const s3 = new S3(s3Options)
-      const { filename, content, mimetype } = image
+  try {
+    const s3 = new S3(s3Options)
+    const { filename, content, mimetype } = image
 
-      const params = {
-        Bucket: BUCKET,
-        Key: filename,
-        Body: content,
-        ContentType: mimetype,
-      }
-
-      const { Location } = await new Promise(function (resolve, reject) {
-        s3.upload(
-          params,
-          function (error: Error, data: ManagedUpload.SendData) {
-            if (error) {
-              console.error('S3 upload error', error)
-              reject(error)
-              return
-            }
-
-            resolve(data)
-          }
-        )
-      })
-
-      s3Url = Location
-    } catch (error) {
-      console.error(error)
+    const params = {
+      Bucket: BUCKET,
+      Key: filename,
+      Body: content,
+      ContentType: mimetype,
     }
+
+    const { Location } = await new Promise(function (resolve, reject) {
+      s3.upload(params, function (error: Error, data: ManagedUpload.SendData) {
+        if (error) {
+          console.error('S3 upload error', error)
+          reject(error)
+          return
+        }
+
+        resolve(data)
+      })
+    })
+
+    s3ImageUrl = Location
+  } catch (error) {
+    console.error(error)
   }
+
+  console.log('MADE IT PAST S3 SAVE')
 
   const Image = model(IMAGE_TABLE_NAME, getImageSchema())
 
@@ -80,7 +79,7 @@ const saveImage: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
     location,
     mph: Number(mph),
     timestamp: Number(timestamp),
-    url: s3Url,
+    url: s3ImageUrl,
     created: new Date().getTime(),
   })
 

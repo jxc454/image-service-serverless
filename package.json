@@ -18,6 +18,7 @@
     "@middy/http-header-normalizer": "^2.5.2",
     "@middy/http-json-body-parser": "^1.5.2",
     "@middy/http-multipart-body-parser": "^2.5.2",
+    "amazon-s3-uri": "^0.1.1",
     "aws-sdk": "^2.1006.0",
     "config": "^3.3.6",
     "dynamoose": "^2.8.2"
