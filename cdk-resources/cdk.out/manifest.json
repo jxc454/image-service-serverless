@@ -1,0 +1,183 @@
+{
+  "version": "14.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "CdkResourcesStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://767724750718/us-east-1",
+      "properties": {
+        "templateFile": "CdkResourcesStack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/CdkResourcesStack/connectionsTable": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "connectionsTable"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "new Table (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:710:38)",
+              "makeTable (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/resources/connections-table-cdk.ts:9:17)",
+              "new CdkResourcesStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/lib/cdk-resources-stack.ts:15:24)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/bin/cdk-resources.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkResourcesStack/connectionsTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "connectionsTable",
+            "trace": [
+              "new Table (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:681:18)",
+              "makeTable (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/resources/connections-table-cdk.ts:9:17)",
+              "new CdkResourcesStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/lib/cdk-resources-stack.ts:15:24)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/bin/cdk-resources.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkResourcesStack/imagesTable": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "imagesTable"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "new Table (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:710:38)",
+              "makeTable (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/resources/images-table-cdk.ts:9:17)",
+              "new CdkResourcesStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/lib/cdk-resources-stack.ts:17:19)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/bin/cdk-resources.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkResourcesStack/imagesTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imagesTable",
+            "trace": [
+              "new Table (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:681:18)",
+              "makeTable (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/resources/images-table-cdk.ts:9:17)",
+              "new CdkResourcesStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/lib/cdk-resources-stack.ts:17:19)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/bin/cdk-resources.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkResourcesStack/imagesBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imagesBucket",
+            "trace": [
+              "new Bucket (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:758:22)",
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/resources/images-bucket-cdk.ts:9:18)",
+              "new CdkResourcesStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/lib/cdk-resources-stack.ts:19:20)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk-resources/bin/cdk-resources.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkResourcesStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stage.ts:94:23)",
+              "process.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/app.ts:64:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/source-map-support/source-map-support.js:516:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "CdkResourcesStack"
+    }
+  }
+}

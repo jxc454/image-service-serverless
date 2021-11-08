@@ -4,17 +4,13 @@ import saveImage from '@functions/saveImage'
 import wsConnect from '@functions/webSocketConnect'
 import pushImage from '@functions/pushImage'
 
-import imageTable from 'resources/image-table'
-import connectionTable from 'resources/connection-table'
+import Resources from './cdk-resources/cdk.out'
 
 const serverlessConfiguration: AWS = {
   service: 'image-service-serverless',
   frameworkVersion: '2',
   resources: {
-    Resources: {
-      ...imageTable,
-      ...connectionTable,
-    },
+    Resources,
   },
   custom: {
     stage: '${self:provider.environment.STAGE}',
