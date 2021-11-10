@@ -3,6 +3,7 @@ import type { AWS } from '@serverless/typescript'
 import saveImage from '@functions/saveImage'
 import wsConnect from '@functions/webSocketConnect'
 import pushImage from '@functions/pushImage'
+import spa from '@functions/spa'
 
 import Resources from './cdk-resources/cdk.out'
 
@@ -68,7 +69,7 @@ const serverlessConfiguration: AWS = {
     },
     lambdaHashingVersion: '20201221',
   },
-  functions: { saveImage, wsConnect, pushImage },
+  functions: { saveImage, wsConnect, pushImage, spa },
 }
 
 module.exports = serverlessConfiguration
