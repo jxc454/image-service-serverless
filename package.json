@@ -24,7 +24,9 @@
     "dynamoose": "^2.8.2"
   },
   "devDependencies": {
+    "@aws-cdk/aws-apigateway": "^1.131.0",
     "@aws-cdk/aws-dynamodb": "^1.131.0",
+    "@aws-cdk/aws-iam": "^1.131.0",
     "@aws-cdk/aws-s3": "^1.131.0",
     "@aws-cdk/core": "^1.131.0",
     "@serverless/typescript": "^2.23.0",
