@@ -11,7 +11,7 @@ import getS3UrlParser from '../../utils/s3_url_parser'
 
 const AWS_REGION: string = config.get('aws.region')
 const STAGE: string = config.get('stage')
-const CONNECTION_TABLE_NAME: string = config.get('db.connectionTableName')
+const CONNECTION_TABLE_NAME: string = process.env.IMAGE_TABLE_NAME
 const S3_TEST_ENDPOINT = 'http://127.0.0.1:9000'
 
 // websocket url

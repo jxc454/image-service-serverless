@@ -9,10 +9,6 @@ node_modules/
 
 .eslintcache
 
-.env
-.env.test
-.env.production
-
 .idea/
 
 config/local.yaml
@@ -23,3 +19,7 @@ dist/
 
 docker/
 .dynamodb/
+
+cdk/speed-camera/cdk.out/.cache/
+cdk/speed-camera/cdk.out/asset*/
+

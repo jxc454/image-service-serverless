@@ -10,7 +10,7 @@ export default {
         batchSize: 10,
         startingPosition: 'TRIM_HORIZON',
         arn: {
-          'Fn::GetAtt': ['imagesTable', 'StreamArn'],
+          'Fn::GetAtt': ['imagesTable4174DE57', 'StreamArn'],
         },
       },
     },

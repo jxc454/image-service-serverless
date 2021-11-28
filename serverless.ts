@@ -5,7 +5,7 @@ import wsConnect from '@functions/webSocketConnect'
 import pushImage from '@functions/pushImage'
 import spa from '@functions/spa'
 
-import Resources from './cdk-resources/cdk.out'
+import Resources from './cdk/speed-camera'
 
 const serverlessConfiguration: AWS = {
   service: 'image-service-serverless',
@@ -14,8 +14,8 @@ const serverlessConfiguration: AWS = {
     Resources,
   },
   custom: {
-    stage: '${self:provider.environment.STAGE}',
-    tableName: '${self:custom.stage}-images',
+    stage: 'local',
+    tableName: 'local-images',
     esbuild: {
       bundle: true,
       minify: true,
@@ -56,16 +56,18 @@ const serverlessConfiguration: AWS = {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
       apiKeys: ['dev-myFirstKey'],
+      // these should be populated after cdk deploy creates the apigw
+      restApiId: '3', // The resource ID of your API Gateway (can be found in the console in your API Gateway's base URL),
+      restApiRootResourceId: '2', // Root resource ID- this is the ID of the existing root path where you want this service to be mounted (might be for the API Gateway's base root "/" or for some other base path you want to use in front of your functions' paths like "/subpath".)
     },
     websocketsApiName: 'image-ws',
-    // shouldn't really need this since no messages will be incoming
     websocketsApiRouteSelectionExpression: '$request.body.action',
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=100',
-      STAGE: "${opt:stage, 'dev'}",
-      IMAGE_TABLE_NAME: '${self:provider.environment.STAGE}-images',
-      CONNECTION_TABLE_NAME: '${self:provider.environment.STAGE}-connections',
+      STAGE: 'local',
+      IMAGE_TABLE_NAME: 'local-images',
+      CONNECTION_TABLE_NAME: 'local-connections',
     },
     lambdaHashingVersion: '20201221',
   },

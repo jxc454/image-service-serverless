@@ -1,0 +1,809 @@
+{
+  "version": "15.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "SpeedCameraStackQa": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "SpeedCameraStackQa.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/SpeedCameraStackQa": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1",
+              "id": "1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1",
+              "packaging": "zip",
+              "sourceHash": "1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1",
+              "s3BucketParameter": "AssetParameters1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1S3Bucket4842F32D",
+              "s3KeyParameter": "AssetParameters1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1S3VersionKeyD0A0B57A",
+              "artifactHashParameter": "AssetParameters1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1ArtifactHash0128B949"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:37)",
+              "new CustomResourceProvider (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:100:37)",
+              "Function.getOrCreateProvider (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:70:10)",
+              "Bucket.enableAutoDeleteObjects (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1154:45)",
+              "new Bucket (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:826:12)",
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/webserver-bucket-cdk.ts:10:18)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:16:47)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/connectionsTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "connectionsTable7418640E",
+            "trace": [
+              "new Table (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:683:18)",
+              "makeTable (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/connections-table-cdk.ts:6:17)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:13:24)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/imagesTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imagesTable4174DE57",
+            "trace": [
+              "new Table (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:683:18)",
+              "makeTable (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/images-table-cdk.ts:8:10)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:14:19)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/imagesBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imagesBucketF1A776CF",
+            "trace": [
+              "new Bucket (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:758:22)",
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/images-bucket-cdk.ts:6:10)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:15:20)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/webServerBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webServerBucketC32CE471",
+            "trace": [
+              "new Bucket (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:758:22)",
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/webserver-bucket-cdk.ts:10:18)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:16:47)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/webServerBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webServerBucketPolicyBD5F5A8F",
+            "trace": [
+              "new BucketPolicy (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket-policy.ts:30:21)",
+              "Bucket.addToResourcePolicy (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:228:21)",
+              "Function.addToPrincipalOrResource (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-iam/lib/grant.ts:76:45)",
+              "Bucket.grantPublicAccess (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:329:22)",
+              "new Bucket (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:818:12)",
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/webserver-bucket-cdk.ts:10:18)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:16:47)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/webServerBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webServerBucketAutoDeleteObjectsCustomResource4DD0F2AD",
+            "trace": [
+              "new CustomResource (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource.ts:36:21)",
+              "Bucket.enableAutoDeleteObjects (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1175:28)",
+              "new Bucket (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:826:12)",
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/webserver-bucket-cdk.ts:10:18)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:16:47)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+            "trace": [
+              "new CustomResourceProvider (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:116:18)",
+              "Function.getOrCreateProvider (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:70:10)",
+              "Bucket.enableAutoDeleteObjects (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1154:45)",
+              "new Bucket (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:826:12)",
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/webserver-bucket-cdk.ts:10:18)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:16:47)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+            "trace": [
+              "new CustomResourceProvider (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:134:21)",
+              "Function.getOrCreateProvider (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:70:10)",
+              "Bucket.enableAutoDeleteObjects (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1154:45)",
+              "new Bucket (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:826:12)",
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/webserver-bucket-cdk.ts:10:18)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:16:47)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/AssetParameters/1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1S3Bucket4842F32D",
+            "trace": [
+              "new FileAssetParameters (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:37)",
+              "new CustomResourceProvider (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:100:37)",
+              "Function.getOrCreateProvider (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:70:10)",
+              "Bucket.enableAutoDeleteObjects (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1154:45)",
+              "new Bucket (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:826:12)",
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/webserver-bucket-cdk.ts:10:18)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:16:47)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/AssetParameters/1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1S3VersionKeyD0A0B57A",
+            "trace": [
+              "new FileAssetParameters (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:37)",
+              "new CustomResourceProvider (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:100:37)",
+              "Function.getOrCreateProvider (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:70:10)",
+              "Bucket.enableAutoDeleteObjects (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1154:45)",
+              "new Bucket (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:826:12)",
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/webserver-bucket-cdk.ts:10:18)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:16:47)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/AssetParameters/1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1ArtifactHash0128B949",
+            "trace": [
+              "new FileAssetParameters (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:37)",
+              "new CustomResourceProvider (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:100:37)",
+              "Function.getOrCreateProvider (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:70:10)",
+              "Bucket.enableAutoDeleteObjects (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1154:45)",
+              "new Bucket (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:826:12)",
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/webserver-bucket-cdk.ts:10:18)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:16:47)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/speed-camera-api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "speedcameraapi8C764278",
+            "trace": [
+              "new RestApi (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:466:22)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:15:15)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/speed-camera-api/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "speedcameraapiCloudWatchRoleD01BFD1E",
+            "trace": [
+              "new Role (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-iam/lib/role.ts:199:18)",
+              "RestApi._configureCloudWatchRole (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:289:18)",
+              "new RestApi (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:484:12)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:15:15)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/speed-camera-api/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "speedcameraapiAccountF1B33237",
+            "trace": [
+              "RestApi._configureCloudWatchRole (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:294:22)",
+              "new RestApi (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:484:12)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:15:15)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/speed-camera-api/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "speedcameraapiDeploymentDACA0D09e44d6ac9d449102d4d53993f68e3ba1a",
+            "trace": [
+              "new Deployment (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/deployment.ts:34:21)",
+              "RestApi._configureDeployment (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:318:32)",
+              "new RestApi (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:487:10)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:15:15)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/speed-camera-api/DeploymentStage.qa/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "speedcameraapiDeploymentStageqa27A614A9",
+            "trace": [
+              "new Stage (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/stage.ts:136:22)",
+              "RestApi._configureDeployment (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:328:30)",
+              "new RestApi (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:487:10)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:15:15)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/speed-camera-api/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "speedcameraapiEndpoint61E6C1BA",
+            "trace": [
+              "RestApi._configureDeployment (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:333:7)",
+              "new RestApi (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:487:10)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:15:15)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/speed-camera-api/Default/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "speedcameraapiGETB1C5017D",
+            "trace": [
+              "new Method (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:116:22)",
+              "RootResource.addMethod (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:95:12)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:28:12)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/speed-camera-api/Default/{proxy+}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "speedcameraapiproxy143CC2FA",
+            "trace": [
+              "new Resource (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:342:22)",
+              "new ProxyResource (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:397:5)",
+              "RootResource.addProxy (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:99:12)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:31:12)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/speed-camera-api/Default/{proxy+}/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "speedcameraapiproxyANYF8C6AF73",
+            "trace": [
+              "new Method (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:116:22)",
+              "ProxyResource.addMethod (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:95:12)",
+              "ProxyResource.addMethod (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:419:18)",
+              "new ProxyResource (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:406:29)",
+              "RootResource.addProxy (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:99:12)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:31:12)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/speed-camera-api/Default/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "speedcameraapiANY07D2CEA7",
+            "trace": [
+              "new Method (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:116:22)",
+              "RootResource.addMethod (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:95:12)",
+              "ProxyResource.addMethod (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:416:29)",
+              "new ProxyResource (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:406:29)",
+              "RootResource.addProxy (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:99:12)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:31:12)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/speed-camera-api/apiDomainName/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "speedcameraapiapiDomainName2B2F1A52",
+            "trace": [
+              "new DomainName (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/domain-name.ts:79:22)",
+              "RestApi.addDomainName (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:170:24)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:51:7)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/speed-camera-api/apiDomainName/Map:--=>SpeedCameraStackQaspeedcameraapi11CF771C/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "speedcameraapiapiDomainNameMapSpeedCameraStackQaspeedcameraapi11CF771C236E1D4A",
+            "trace": [
+              "new BasePathMapping (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/base-path-mapping.ts:41:5)",
+              "DomainName.addBasePathMapping (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/domain-name.ts:107:12)",
+              "new DomainName (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/domain-name.ts:99:12)",
+              "RestApi.addDomainName (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:170:24)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:51:7)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/aRecord/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "aRecord97A4C4DC",
+            "trace": [
+              "new RecordSet (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-route53/lib/record-set.ts:119:23)",
+              "new ARecord (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-route53/lib/record-set.ts:146:5)",
+              "makeApiGateway (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/api-gateway-cdk.ts:62:3)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:17:18)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:15:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stage.ts:94:23)",
+              "process.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/app.ts:64:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/source-map-support/source-map-support.js:516:21)"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:31:27)",
+              "/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/stage.ts:94:23)",
+              "process.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/core/lib/app.ts:64:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/source-map-support/source-map-support.js:516:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "SpeedCameraStackQa"
+    }
+  }
+}
