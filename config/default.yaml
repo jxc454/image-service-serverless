@@ -4,8 +4,8 @@ aws:
   accessKeyId: !!null
   secretAccessKey: !!null
 db:
-  imageTableName: !!null
-  connectionTableName: !!null
+  imageTableName: images
+  connectionTableName: connections
 images:
   bucket: !!null
 stage: dev

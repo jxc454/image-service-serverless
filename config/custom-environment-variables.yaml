@@ -3,6 +3,7 @@ aws:
   bucket: S3_BUCKET
   accessKeyId: AWS_ACCESS_KEY_ID
   secretAccessKey: AWS_SECRET_ACCESS_KEY
+db:
   imageTableName: IMAGE_TABLE_NAME
   connectionTableName: CONNECTION_TABLE_NAME
 stage: STAGE

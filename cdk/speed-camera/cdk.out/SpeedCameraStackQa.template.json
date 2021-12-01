@@ -577,7 +577,7 @@
     "CDKMetadata": {
       "Type": "AWS::CDK::Metadata",
       "Properties": {
-        "Analytics": "v2:deflate64:H4sIAAAAAAAA/21R0XLCIBD8Ft8Rm1HfG/XVNqP9AYSrYoTLwKHNZPj3QhInbadPt8fC3t5S8GK54i+zV/Hwc6nqRSfRAe+OJGTNDuAxOAlsi9aTC5LYNnhCMxGfdsK/qMrhXStwrPQeKOmdtT3n+5VwwgAlJjXvgZpAGaURSpNGG1n20qnWCoPqxLsPcbr1k3oQmV/ybhNkDf27EQ2lwpuW7XQ89Emx0WdB8BAt75JBKhs9Wn/CUkoMltgOmhu2Bmwv/qPLG/QuBvBccyM8sD3QBVUmR5SW/2r/DWmHRmj7lhLo9acuC1WCLnvRNGNSf44i08Ik/zikkWtkDgPBOiVSHiB9nRqGZXQEijEyiwr41S/uxYoXa17Mrl7ruUu7agP8MNRv4UaFAAcCAAA="
+        "Analytics": "v2:deflate64:H4sIAAAAAAAA/21R0W7CMAz8Ft5DWAW8r8ArrIL9QEg8CCVxlTiwqsq/L2mLYNOefGdblzun4MV8wd8m7+Lup1LVs06iA94dSMia7cFjcBLY+st+BGoCsTVaTy7IhIInNK8rT/xrVDm8aQWOld4DJeWTtqe8XwknDFCaJJKElSaNNrLspVOtFQbVkXef4njt9XsQmZ/zbhVkDZSbIxpKhVct22d74Emx0SdBcBct75ItKhs9Gn7AUkoMltgGmiu2Bmwv/sKy797FAB7hVsID2wKdUeXhiFLk7/bf02zQCG13KXev/2RZqBJ03oqmGe/zpxWZFib5x+EauUbmMBAs00XKPaSvU8NjGR2AYozMogJ+8bNbseDFkheTi9d66lJWbYDvh/oDykB5DwcCAAA="
       },
       "Metadata": {
         "aws:cdk:path": "SpeedCameraStackQa/CDKMetadata/Default"
@@ -585,21 +585,25 @@
       "Condition": "CDKMetadataAvailable"
     }
   },
-  "Parameters": {
-    "AssetParameters1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1S3Bucket4842F32D": {
-      "Type": "String",
-      "Description": "S3 bucket for asset \"1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1\""
-    },
-    "AssetParameters1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1S3VersionKeyD0A0B57A": {
-      "Type": "String",
-      "Description": "S3 key for asset version \"1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1\""
-    },
-    "AssetParameters1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1ArtifactHash0128B949": {
-      "Type": "String",
-      "Description": "Artifact hash for asset \"1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1\""
-    }
-  },
   "Outputs": {
+    "connectionsTableName": {
+      "Value": {
+        "Ref": "connectionsTable7418640E"
+      }
+    },
+    "imagesTableStreamArn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "imagesTable4174DE57",
+          "StreamArn"
+        ]
+      }
+    },
+    "imagesTableName": {
+      "Value": {
+        "Ref": "imagesTable4174DE57"
+      }
+    },
     "speedcameraapiEndpoint61E6C1BA": {
       "Value": {
         "Fn::Join": [
@@ -625,6 +629,33 @@
           ]
         ]
       }
+    },
+    "apiGatewayRestApiId": {
+      "Value": {
+        "Ref": "speedcameraapi8C764278"
+      }
+    },
+    "apiGatewayRestApiRootResourceId": {
+      "Value": {
+        "Fn::GetAtt": [
+          "speedcameraapi8C764278",
+          "RootResourceId"
+        ]
+      }
+    }
+  },
+  "Parameters": {
+    "AssetParameters1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1S3Bucket4842F32D": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1\""
+    },
+    "AssetParameters1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1S3VersionKeyD0A0B57A": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1\""
+    },
+    "AssetParameters1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1ArtifactHash0128B949": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"1f7e277bd526ebce1983fa1e7a84a5281ec533d9187caaebb773681bbf7bf4c1\""
     }
   },
   "Conditions": {

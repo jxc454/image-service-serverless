@@ -75,6 +75,14 @@
                   "fqn": "@aws-cdk/core.Resource",
                   "version": "1.134.0"
                 }
+              },
+              "connectionsTableName": {
+                "id": "connectionsTableName",
+                "path": "SpeedCameraStackQa/connectionsTable/connectionsTableName",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.134.0"
+                }
               }
             },
             "constructInfo": {
@@ -128,6 +136,22 @@
                 "path": "SpeedCameraStackQa/imagesTable/ScalingRole",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.Resource",
+                  "version": "1.134.0"
+                }
+              },
+              "imagesTableStreamArn": {
+                "id": "imagesTableStreamArn",
+                "path": "SpeedCameraStackQa/imagesTable/imagesTableStreamArn",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.134.0"
+                }
+              },
+              "imagesTableName": {
+                "id": "imagesTableName",
+                "path": "SpeedCameraStackQa/imagesTable/imagesTableName",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
                   "version": "1.134.0"
                 }
               }
@@ -796,6 +820,22 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-apigateway.DomainName",
+                  "version": "1.134.0"
+                }
+              },
+              "apiGatewayRestApiId": {
+                "id": "apiGatewayRestApiId",
+                "path": "SpeedCameraStackQa/speed-camera-api/apiGatewayRestApiId",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.134.0"
+                }
+              },
+              "apiGatewayRestApiRootResourceId": {
+                "id": "apiGatewayRestApiRootResourceId",
+                "path": "SpeedCameraStackQa/speed-camera-api/apiGatewayRestApiRootResourceId",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
                   "version": "1.134.0"
                 }
               }

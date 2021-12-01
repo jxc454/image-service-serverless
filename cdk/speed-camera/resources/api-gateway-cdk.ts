@@ -1,5 +1,5 @@
 import * as s3 from '@aws-cdk/aws-s3'
-import { Construct } from '@aws-cdk/core'
+import { Construct, CfnOutput } from '@aws-cdk/core'
 import { EndpointType, HttpIntegration, RestApi } from '@aws-cdk/aws-apigateway'
 import { Certificate } from '@aws-cdk/aws-certificatemanager'
 import { ARecord, HostedZone, RecordTarget } from '@aws-cdk/aws-route53'
@@ -69,6 +69,21 @@ const makeApiGateway: (
       zoneName: domain.split('.').slice(-2).join('.'),
     }),
   })
+
+  // outputs for the sls deploy
+  const apiIdOutput = new CfnOutput(api, 'apiGatewayRestApiId', {
+    value: api.restApiId,
+  })
+  apiIdOutput.overrideLogicalId('apiGatewayRestApiId')
+
+  const rootResourceIdOutput = new CfnOutput(
+    api,
+    'apiGatewayRestApiRootResourceId',
+    {
+      value: api.restApiRootResourceId,
+    }
+  )
+  rootResourceIdOutput.overrideLogicalId('apiGatewayRestApiRootResourceId')
 
   return api
 }
