@@ -1,9 +1,12 @@
 aws:
-  region: AWS_REGION
   bucket: S3_BUCKET
   accessKeyId: AWS_ACCESS_KEY_ID
   secretAccessKey: AWS_SECRET_ACCESS_KEY
 db:
   imageTableName: IMAGE_TABLE_NAME
   connectionTableName: CONNECTION_TABLE_NAME
+images:
+  bucket: IMAGE_BUCKET_NAME
+websocket:
+  apiId: WS_API_ID
 stage: STAGE

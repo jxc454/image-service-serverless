@@ -184,6 +184,14 @@
                   "fqn": "@aws-cdk/aws-s3.CfnBucket",
                   "version": "1.134.0"
                 }
+              },
+              "imagesBucket": {
+                "id": "imagesBucket",
+                "path": "SpeedCameraStackQa/imagesBucket/imagesBucket",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnOutput",
+                  "version": "1.134.0"
+                }
               }
             },
             "constructInfo": {

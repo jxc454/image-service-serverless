@@ -8,4 +8,6 @@ db:
   connectionTableName: connections
 images:
   bucket: !!null
+websocket:
+  apiId: !!null
 stage: dev

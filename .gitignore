@@ -22,4 +22,6 @@ docker/
 
 cdk/speed-camera/cdk.out/.cache/
 cdk/speed-camera/cdk.out/asset*/
+cdk/speed-camera/outputs.json
 
+.serverless/

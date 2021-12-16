@@ -195,7 +195,33 @@
             "data": "imagesBucketF1A776CF",
             "trace": [
               "new Bucket (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:758:22)",
-              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/images-bucket-cdk.ts:5:10)",
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/images-bucket-cdk.ts:5:18)",
+              "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:15:20)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:16:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/SpeedCameraStackQa/imagesBucket/imagesBucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imagesBucket",
+            "trace": [
+              "makeBucket (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/resources/images-bucket-cdk.ts:11:28)",
               "new SpeedCameraStack (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/lib/speed-camera-stack.ts:15:20)",
               "Object.<anonymous> (/Users/jcc/WebstormProjects/image-service-serverless/cdk/speed-camera/bin/speed-camera.ts:16:1)",
               "Module._compile (internal/modules/cjs/loader.js:1063:30)",

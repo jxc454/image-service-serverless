@@ -6,10 +6,15 @@ import pushImage from '@functions/pushImage'
 
 import Resources, { cdkOutput } from './cdk/speed-camera'
 
+const stage = process.env.STAGE
+
 const serverlessConfiguration: AWS = {
-  service: 'SpeedCameraApi' + '${opt:stage, "local"}',
+  service: `SpeedCameraApi${stage}`,
   frameworkVersion: '2',
-  resources: Resources,
+  resources: stage === 'local' ? Resources : undefined,
+  package: {
+    patterns: ['config/**', '!config/local.yaml', 'node_modules/js-yaml'],
+  },
   custom: {
     stage: 'local',
     tableName: cdkOutput.imagesTableName,
@@ -43,10 +48,13 @@ const serverlessConfiguration: AWS = {
     'serverless-offline-dynamodb-streams',
     'serverless-offline',
     'serverless-esbuild',
+    'serverless-iam-roles-per-function',
   ],
   provider: {
-    stage: '${opt:stage, "local"}',
+    stage,
     name: 'aws',
+    // TODO - put region in one place
+    // region: 'us-east-1',
     runtime: 'nodejs14.x',
     apiGateway: {
       binaryMediaTypes: ['*/*'],
@@ -63,7 +71,7 @@ const serverlessConfiguration: AWS = {
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=100',
-      STAGE: '${opt:stage, "local"}',
+      STAGE: stage,
       IMAGE_TABLE_NAME: cdkOutput.imagesTableName,
       CONNECTION_TABLE_NAME: cdkOutput.connectionsTableName,
     },
@@ -72,7 +80,7 @@ const serverlessConfiguration: AWS = {
   functions: {
     saveImage,
     wsConnect,
-    pushImage: pushImage(cdkOutput.imagesTableName),
+    pushImage: pushImage(cdkOutput.imagesTableStreamArn),
   },
 }
 

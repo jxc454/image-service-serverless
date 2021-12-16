@@ -604,6 +604,11 @@
         "Ref": "imagesTable4174DE57"
       }
     },
+    "imagesBucket": {
+      "Value": {
+        "Ref": "imagesBucketF1A776CF"
+      }
+    },
     "speedcameraapiEndpoint61E6C1BA": {
       "Value": {
         "Fn::Join": [

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p>Click on the "Choose File" button to upload a file:</p>
+    <form action="http://localhost:3000/local/image" method="POST" enctype="multipart/form-data">
+<!--    <form action="https://qa.speed-camera.net/image" method="POST" enctype="multipart/form-data">-->
+        <input type="file" id="image" name="image">
+        <input type="text" id="location" name="location" value="living-room">
+        <input type="number" id="mph" name="mph" value=35>
+        <input type="number" id="timestamp" name="timestamp" value=1634332950>
+        <input type="submit">
+    </form>
+</body>
+</html>

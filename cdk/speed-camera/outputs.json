@@ -1,8 +1,0 @@
-{
-  "SpeedCameraStackQa": {
-    "imagesTableName": "imagesTable",
-    "connectionsTableName": "connectionsTable",
-    "apiGatewayRestApiId": "ujp28mtgd6",
-    "apiGatewayRestApiRootResourceId": "mpwtujiyo7"
-  }
-}

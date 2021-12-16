@@ -11,23 +11,26 @@ import getS3UrlParser from '../../utils/s3_url_parser'
 
 const AWS_REGION: string = config.get('aws.region')
 const STAGE: string = config.get('stage')
-const CONNECTION_TABLE_NAME: string = process.env.IMAGE_TABLE_NAME
+const CONNECTION_TABLE_NAME: string = config.get('db.connectionTableName')
 const S3_TEST_ENDPOINT = 'http://127.0.0.1:9000'
+const WS_API_ID = config.get('websocket.apiId')
 
 // websocket url
-const API_URL = 'http://localhost:3001'
+const API_URL =
+  STAGE === 'production'
+    ? `https://${WS_API_ID}.execute-api.${AWS_REGION}.amazonaws.com/${STAGE}/`
+    : 'http://localhost:3001'
+
+console.log('API_URL', API_URL)
 
 const pushImage: (event: DynamoDBStreamEvent) => void = async ({ Records }) => {
   const s3Options: ClientConfiguration = {
     region: AWS_REGION,
+    // maybe need aws creds here?
   }
   const s3UrlParser = getS3UrlParser(STAGE)
 
-  if (process.env.STAGE !== 'production') {
-    console.log(
-      `PUSH IMAGE HANDLER, STAGE is ${STAGE}, USING LOCAL S3 AND DYNAMO DB`
-    )
-
+  if (process.env.STAGE === 'local') {
     // use local dynamoDB
     dynamooseAws.ddb.local()
 
@@ -51,9 +54,8 @@ const pushImage: (event: DynamoDBStreamEvent) => void = async ({ Records }) => {
 
   for (const { eventName, dynamodb } of Records) {
     const {
-      NewImage: { mph, location, timestamp, url },
+      NewImage: { location, url },
     } = dynamodb
-    console.log('Got dynamodb event', eventName, location, timestamp, url, mph)
 
     if (eventName === 'INSERT') {
       const connectionIds = connectionIdsMemo.has(location.S)

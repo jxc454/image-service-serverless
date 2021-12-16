@@ -1,5 +1,4 @@
 import { ManagedUpload } from 'aws-sdk/lib/s3/managed_upload'
-
 import config from 'config'
 import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/apiGateway'
 import { formatJSONResponse } from '@libs/apiGateway'
@@ -12,9 +11,10 @@ import schema from './schema'
 
 const AWS_REGION: string = config.get('aws.region')
 const IMAGE_TABLE_NAME: string = config.get('db.imageTableName')
-const BUCKET: string = config.get('images.bucket')
+const BUCKET_NAME: string = config.get('images.bucket')
 const S3_TEST_ENDPOINT = 'http://127.0.0.1:9000'
 
+// TODO - script to automatically create/verifyExistenceOf imagesBucket on npm start
 const saveImage: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   event
 ) => {
@@ -22,7 +22,7 @@ const saveImage: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
     region: AWS_REGION,
   }
 
-  if (process.env.STAGE !== 'production') {
+  if (process.env.STAGE === 'local') {
     console.log(
       `SAVE IMAGE, STAGE is ${process.env.STAGE}, USING LOCAL S3 AND DYNAMO DB`
     )
@@ -37,6 +37,9 @@ const saveImage: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
     s3Options.secretAccessKey = config.get('aws.secretAccessKey')
   }
 
+  console.dir(event.body)
+  console.dir(config)
+
   const {
     body: { location, mph, timestamp, image },
   } = event
@@ -48,7 +51,7 @@ const saveImage: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
     const { filename, content, mimetype } = image
 
     const params = {
-      Bucket: BUCKET,
+      Bucket: BUCKET_NAME,
       Key: filename,
       Body: content,
       ContentType: mimetype,
@@ -70,8 +73,6 @@ const saveImage: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   } catch (error) {
     console.error(error)
   }
-
-  console.log('MADE IT PAST S3 SAVE')
 
   const Image = model(IMAGE_TABLE_NAME, getImageSchema())
 
