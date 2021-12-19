@@ -1,6 +1,5 @@
 aws:
-  region: !!null
-  bucket: !!null
+  region: us-east-1
   accessKeyId: !!null
   secretAccessKey: !!null
 db:

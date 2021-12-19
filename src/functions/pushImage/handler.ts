@@ -17,11 +17,9 @@ const WS_API_ID = config.get('websocket.apiId')
 
 // websocket url
 const API_URL =
-  STAGE === 'production'
+  STAGE !== 'local'
     ? `https://${WS_API_ID}.execute-api.${AWS_REGION}.amazonaws.com/${STAGE}/`
     : 'http://localhost:3001'
-
-console.log('API_URL', API_URL)
 
 const pushImage: (event: DynamoDBStreamEvent) => void = async ({ Records }) => {
   const s3Options: ClientConfiguration = {

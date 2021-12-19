@@ -1,5 +1,4 @@
 aws:
-  bucket: S3_BUCKET
   accessKeyId: AWS_ACCESS_KEY_ID
   secretAccessKey: AWS_SECRET_ACCESS_KEY
 db:

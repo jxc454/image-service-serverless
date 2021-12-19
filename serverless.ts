@@ -54,7 +54,7 @@ const serverlessConfiguration: AWS = {
     stage,
     name: 'aws',
     // TODO - put region in one place
-    // region: 'us-east-1',
+    region: 'us-east-1',
     runtime: 'nodejs14.x',
     apiGateway: {
       binaryMediaTypes: ['*/*'],
@@ -74,6 +74,7 @@ const serverlessConfiguration: AWS = {
       STAGE: stage,
       IMAGE_TABLE_NAME: cdkOutput.imagesTableName,
       CONNECTION_TABLE_NAME: cdkOutput.connectionsTableName,
+      IMAGE_BUCKET_NAME: cdkOutput.imagesBucket,
     },
     lambdaHashingVersion: '20201221',
   },

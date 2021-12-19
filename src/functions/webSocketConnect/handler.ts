@@ -15,7 +15,7 @@ const CONNECTION_TABLE_NAME: string = config.get('db.connectionTableName')
 const wsConnect: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   event
 ) => {
-  if (process.env.STAGE !== 'production') {
+  if (process.env.STAGE === 'local') {
     console.log(`STAGE is ${process.env.STAGE}, USING LOCAL DYNAMO DB`)
 
     // use local dynamoDB

@@ -1,25 +1,37 @@
 import { handlerPath } from '@libs/handlerResolver'
 import { cdkOutput } from '../../../cdk/speed-camera'
 
+const dynamoActions = [
+  'dynamodb:CreateItem',
+  'dynamodb:Describe*',
+  'dynamodb:List*',
+  'dynamodb:Get*',
+  'dynamodb:UpdateItem',
+  'dynamodb:Query',
+  'dynamodb:Scan',
+  'dynamodb:PutItem',
+]
+
 export default (streamArn: string) => ({
   handler: `${handlerPath(__dirname)}/handler.main`,
   environment: {
     WS_API_ID: { Ref: 'WebsocketsApi' },
   },
+  iamRoleStatementsInherit: true,
   iamRoleStatements: [
+    // TODO - delete role for imagesTable?
     {
       Effect: 'Allow',
-      Action: [
-        'dynamodb:CreateItem',
-        'dynamodb:CreateTable',
-        'dynamodb:GetItem',
-      ],
+      Action: dynamoActions,
       Resource: `arn:aws:dynamodb:\${self:provider.region}:*:table/${cdkOutput.imagesTableName}`,
     },
     {
       Effect: 'Allow',
-      Action: ['dynamodb:GetItem'],
-      Resource: `arn:aws:dynamodb:\${self:provider.region}:*:table/${cdkOutput.connectionsTableName}`,
+      Action: dynamoActions,
+      Resource: [
+        `arn:aws:dynamodb:\${self:provider.region}:*:table/${cdkOutput.connectionsTableName}`,
+        `arn:aws:dynamodb:\${self:provider.region}:*:table/${cdkOutput.connectionsTableName}/index/*`,
+      ],
     },
     {
       Effect: 'Allow',
@@ -28,6 +40,21 @@ export default (streamArn: string) => ({
         `arn:aws:s3:::${cdkOutput.imagesBucket}/*`,
         `arn:aws:s3:::${cdkOutput.imagesBucket}`,
       ],
+    },
+    {
+      Effect: 'Allow',
+      Action: ['execute-api:Invoke', 'execute-api:ManageConnections'],
+      Resource: {
+        'Fn::Join': [
+          '',
+          [
+            /* eslint-disable-next-line no-template-curly-in-string */
+            'arn:aws:execute-api:${self:provider.region}:*:',
+            { Ref: 'WebsocketsApi' },
+            '/qa/POST/@connections/*',
+          ],
+        ],
+      },
     },
   ],
   events: [

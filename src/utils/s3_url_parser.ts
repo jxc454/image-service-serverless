@@ -26,7 +26,7 @@ class LocalS3UrlParser implements S3UrlParser {
 }
 
 export default function (stage: string): S3UrlParser {
-  return stage === 'production'
+  return stage !== 'local'
     ? new ProductionS3UrlParser()
     : new LocalS3UrlParser()
 }

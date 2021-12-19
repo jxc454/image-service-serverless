@@ -7,6 +7,7 @@ export default {
     IMAGE_TABLE_NAME: cdkOutput.imagesTableName,
     IMAGE_BUCKET_NAME: cdkOutput.imagesBucket,
   },
+  iamRoleStatementsInherit: true,
   iamRoleStatements: [
     {
       Effect: 'Allow',
