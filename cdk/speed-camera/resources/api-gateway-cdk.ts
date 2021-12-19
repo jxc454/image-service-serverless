@@ -13,6 +13,7 @@ const makeApiGateway: (
   const { domain, certArn, hostedZoneId } = cons.node.tryGetContext(stage)
 
   const api = new RestApi(cons, 'speed-camera-api', {
+    binaryMediaTypes: ['image/jpeg', 'image/png', 'multipart/form-data'],
     deployOptions: { stageName: stage },
     endpointConfiguration: { types: [EndpointType.REGIONAL] },
   })

@@ -436,6 +436,11 @@
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::ApiGateway::RestApi",
                   "aws:cdk:cloudformation:props": {
+                    "binaryMediaTypes": [
+                      "image/jpeg",
+                      "image/png",
+                      "multipart/form-data"
+                    ],
                     "endpointConfiguration": {
                       "types": [
                         "REGIONAL"
@@ -558,7 +563,7 @@
                           "Ref": "speedcameraapi8C764278"
                         },
                         "deploymentId": {
-                          "Ref": "speedcameraapiDeploymentDACA0D09e44d6ac9d449102d4d53993f68e3ba1a"
+                          "Ref": "speedcameraapiDeploymentDACA0D09fbb0a6c0b1f55c4b26e3d0afde4844dd"
                         },
                         "stageName": "qa"
                       }

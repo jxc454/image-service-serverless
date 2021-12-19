@@ -305,6 +305,11 @@
     "speedcameraapi8C764278": {
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
+        "BinaryMediaTypes": [
+          "image/jpeg",
+          "image/png",
+          "multipart/form-data"
+        ],
         "EndpointConfiguration": {
           "Types": [
             "REGIONAL"
@@ -367,7 +372,7 @@
         "aws:cdk:path": "SpeedCameraStackQa/speed-camera-api/Account"
       }
     },
-    "speedcameraapiDeploymentDACA0D09e44d6ac9d449102d4d53993f68e3ba1a": {
+    "speedcameraapiDeploymentDACA0D09fbb0a6c0b1f55c4b26e3d0afde4844dd": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -392,7 +397,7 @@
           "Ref": "speedcameraapi8C764278"
         },
         "DeploymentId": {
-          "Ref": "speedcameraapiDeploymentDACA0D09e44d6ac9d449102d4d53993f68e3ba1a"
+          "Ref": "speedcameraapiDeploymentDACA0D09fbb0a6c0b1f55c4b26e3d0afde4844dd"
         },
         "StageName": "qa"
       },

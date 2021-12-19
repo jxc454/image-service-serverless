@@ -37,9 +37,6 @@ const saveImage: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
     s3Options.secretAccessKey = config.get('aws.secretAccessKey')
   }
 
-  console.dir(event.body)
-  console.dir(config)
-
   const {
     body: { location, mph, timestamp, image },
   } = event
